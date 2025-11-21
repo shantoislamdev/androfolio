@@ -358,36 +358,65 @@ body {
 .skill-category-card {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 24px;
     height: 100%;
+    background-color: var(--md-sys-color-surface-variant); /* Using surface variant for now, or define surface-container-low */
+    background-color: #f0f4ef; /* Light greenish tint for surface container low manually */
+    padding: 32px;
+    border-radius: 24px;
+    border: none; /* Clean look, no border */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+body.dark-theme .skill-category-card {
+    background-color: #1e261d; /* Dark surface container low */
+}
+
+/* Removed hover effect as requested */
+
+.skill-category-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.skill-icon {
+    color: var(--md-sys-color-primary);
+    font-size: 32px;
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+    padding:1rem;
+    border-radius: 16px;
 }
 
 .skill-category-title {
-    color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-surface);
+    margin: 0;
 }
 
 .skills-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 12px;
 }
 
 .chip {
-    height: 32px;
-    padding: 0 16px;
-    border-radius: 8px;
-    border: 1px solid var(--md-sys-color-outline);
+    height: 36px;
+    padding: 0 20px;
+    border-radius: 12px;
+    border: none; /* Remove border */
+    background-color: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
     display: flex;
     align-items: center;
     font: var(--md-sys-typescale-label-large);
-    color: var(--md-sys-color-on-surface-variant);
-    transition: background-color 0.2s;
+    transition: all 0.2s;
 }
 
 .chip:hover {
-    background-color: var(--md-sys-color-secondary-container);
-    border-color: transparent;
-    color: var(--md-sys-color-on-secondary-container);
+    background-color: var(--md-sys-color-primary-container); /* Tonal shift on hover */
+    color: var(--md-sys-color-on-primary-container);
+    transform: scale(1.05);
 }
 
 /* Projects */
