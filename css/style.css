@@ -21,7 +21,7 @@
     --md-sys-color-surface-variant: #dee5d8;
     --md-sys-color-on-surface-variant: #424940;
     
-    --md-sys-color-outline: #72796f;
+    --md-sys-color-outline: #acbaa5;
     --md-sys-color-background: #fcfdf6;
     --md-sys-color-on-background: #1a1c19;
 
@@ -78,7 +78,7 @@ body.dark-theme {
     --md-sys-color-surface-variant: #424940;
     --md-sys-color-on-surface-variant: #c2c9bd;
     
-    --md-sys-color-outline: #8c9388;
+    --md-sys-color-outline: #252b21;
     --md-sys-color-background: #1a1c19;
     --md-sys-color-on-background: #e2e3dd;
 }
@@ -92,6 +92,20 @@ body.dark-theme {
 
 html {
     scroll-behavior: smooth;
+    /* Hide scrollbar for webkit browsers (Chrome, Safari) */
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar while maintaining functionality */
+* {
+    /* For webkit browsers */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for webkit browsers (Chrome, Safari) */
+*::-webkit-scrollbar {
+    display: none;
 }
 
 body {
@@ -124,6 +138,7 @@ body {
 .title-large { font: var(--md-sys-typescale-title-large); }
 .body-large { font: var(--md-sys-typescale-body-large); }
 .body-medium { font: var(--md-sys-typescale-body-medium); }
+.body-small { font: var(--md-sys-typescale-body-small); }
 
 /* Navigation Rail */
 .navigation-rail {
@@ -580,8 +595,9 @@ body.dark-theme .text-field textarea:focus {
 .footer {
     margin-top: 64px;
     text-align: center;
-    color: var(--md-sys-color-outline);
+    color: var(--md-sys-color-on-surface);
     padding-bottom: 24px;
+    opacity: .75;
 }
 
 /* Mobile Responsive */
@@ -606,21 +622,54 @@ body.dark-theme .text-field textarea:focus {
         flex-direction: row;
         padding: 0;
         border-right: none;
-        border-top: 1px solid var(--md-sys-color-outline);
+        border-top: 0.5px solid var(--md-sys-color-outline);
         justify-content: space-around;
     }
 
     .nav-header {
-        display: none; /* Hide theme toggle in bottom bar, maybe move to header? */
+        display: block; /* Show theme toggle on mobile */
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 200;
+        margin: 0;
     }
     
-    /* Floating theme toggle for mobile */
+    /* Minimal floating theme toggle for mobile */
     #theme-toggle {
-        position: fixed;
-        top: 16px;
-        right: 16px;
-        z-index: 200;
+        position: relative; /* Relative to nav-header positioning */
+        width: 40px;
+        height: 40px;
+        border-radius: var(--md-sys-shape-corner-full);
+        background-color: var(--md-sys-color-surface);
+        border: 1px solid var(--md-sys-color-outline);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s var(--md-sys-motion-easing-standard);
+        cursor: pointer;
+        opacity: 0.8;
+    }
+    
+    #theme-toggle:hover {
         background-color: var(--md-sys-color-surface-variant);
+        opacity: 1;
+        transform: scale(1.02);
+    }
+    
+    #theme-toggle:active {
+        transform: scale(0.98);
+    }
+    
+    #theme-toggle .material-symbols-rounded {
+        font-size: 20px;
+        color: var(--md-sys-color-on-surface-variant);
+        transition: color 0.2s var(--md-sys-motion-easing-standard);
+    }
+    
+    #theme-toggle:hover .material-symbols-rounded {
+        color: var(--md-sys-color-on-surface);
     }
 
     .nav-links {
