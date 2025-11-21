@@ -634,7 +634,7 @@ body.dark-theme .text-field textarea:focus {
     
     .nav-indicator {
         width: 64px;
-        top: 12px;
+        top: -4px;
     }
 
     .hero-section {
