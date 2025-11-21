@@ -602,6 +602,9 @@ body.dark-theme .text-field textarea:focus {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+     a {
+        cursor: default;
+     }
     .app-container {
         flex-direction: column;
         padding-bottom: 80px; /* Space for bottom nav */
