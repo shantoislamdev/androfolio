@@ -675,12 +675,13 @@ body.dark-theme .text-field textarea:focus {
     .nav-links {
         flex-direction: row;
         justify-content: space-around;
-        gap: 8px;
+        gap: 4px;
     }
     
     .nav-item {
         width: 100%;
         height: 100%;
+        cursor: default;
     }
     
     .nav-indicator {
