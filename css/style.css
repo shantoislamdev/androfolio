@@ -54,6 +54,11 @@
 
     /* Easing */
     --md-sys-motion-easing-standard: cubic-bezier(0.2, 0.0, 0, 1.0);
+    
+    /* Elevation & Shadows */
+    --md-sys-shadow-color: rgba(0, 0, 0, 0.2);
+    --md-sys-shadow-elevation-1: 0 1px 3px var(--md-sys-shadow-color);
+    --md-sys-shadow-elevation-2: 0 1px 2px var(--md-sys-shadow-color), 0 2px 6px var(--md-sys-shadow-color);
 }
 
 /* Dark Theme Overrides */
@@ -75,12 +80,16 @@ body.dark-theme {
     
     --md-sys-color-surface: #1a1c19;
     --md-sys-color-on-surface: #e2e3dd;
-    --md-sys-color-surface-variant: #424940;
+    --md-sys-color-surface-variant: #252b23;
     --md-sys-color-on-surface-variant: #c2c9bd;
     
     --md-sys-color-outline: #8c9388;
     --md-sys-color-background: #1a1c19;
     --md-sys-color-on-background: #e2e3dd;
+    
+    /* Elevation & Shadows */
+    --md-sys-shadow-color: rgb(255, 255, 255,0.1);
+    --md-sys-shadow-elevation-1: 0 1px 3px var(--md-sys-shadow-color);
 }
 
 /* Reset & Base */
@@ -654,7 +663,7 @@ body.dark-theme .text-field textarea:focus {
         flex-direction: row;
         padding: 0;
         border-right: none;
-        border-top: 0.25px solid var(--md-sys-color-primary-container);
+        box-shadow: var(--md-sys-shadow-elevation-1);
         justify-content: space-around;
     }
 
