@@ -799,7 +799,7 @@ body {
         flex-direction: column-reverse;
         text-align: center;
         gap: 24px;
-        padding: 28px 0 32px !important;
+        padding: 40px 0 !important;
     }
     
     .hero-content .display-small {
@@ -880,8 +880,8 @@ body {
 /* Extra small screens - stack hero buttons */
 @media (max-width: 360px) {
     .hero-section {
-        gap: 16px;
-        padding: 16px 0 32px;
+        gap: 0px;
+        padding: 40px 0;
     }
     
     .hero-actions {
