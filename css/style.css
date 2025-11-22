@@ -25,6 +25,11 @@
     --md-sys-color-background: #edf3e7;
     --md-sys-color-on-background: #1a1c19;
 
+    /* Surface Containers */
+    --md-sys-color-surface-container-low: #f0f4ef;
+    --md-sys-color-surface-container-high: #e0e5df;
+    --md-sys-color-surface-container-highest: #e8f3e6;
+
     /* Typography */
     --md-sys-typescale-display-large: 400 57px/64px 'DM Sans', system-ui, sans-serif;
     --md-sys-typescale-display-medium: 400 45px/52px 'DM Sans', system-ui, sans-serif;
@@ -86,6 +91,11 @@ body.dark-theme {
     --md-sys-color-outline: #8c9388;
     --md-sys-color-background: #252b23;
     --md-sys-color-on-background: #e2e3dd;
+
+    /* Surface Containers */
+    --md-sys-color-surface-container-low: #1e261d;
+    --md-sys-color-surface-container-high: #2f362d;
+    --md-sys-color-surface-container-highest: #253423;
     
     /* Elevation & Shadows */
     --md-sys-shadow-color: rgb(255, 255, 255,0.1);
@@ -101,18 +111,14 @@ body.dark-theme {
 
 html {
     scroll-behavior: smooth;
-    /* Hide scrollbar for webkit browsers (Chrome, Safari) */
     -webkit-overflow-scrolling: touch;
 }
 
-/* Hide scrollbar while maintaining functionality */
 * {
-    /* For webkit browsers */
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
 }
 
-/* Hide scrollbar for webkit browsers (Chrome, Safari) */
 *::-webkit-scrollbar {
     display: none;
 }
@@ -134,7 +140,7 @@ body {
 .content-area {
     flex: 1;
     padding: 24px;
-    margin-left: 80px; /* Width of nav rail */
+    margin-left: 80px;
     max-width: 1200px;
     margin-right: auto;
 }
@@ -185,7 +191,7 @@ body {
     justify-content: center;
     width: 56px;
     height: 56px;
-    border-radius: var(--md-sys-shape-corner-full); /* Pill shape container usually, but circle here for rail */
+    border-radius: var(--md-sys-shape-corner-full);
     color: var(--md-sys-color-on-surface-variant);
     text-decoration: none;
     position: relative;
@@ -201,20 +207,20 @@ body {
     font: var(--md-sys-typescale-label-large);
     font-size: 12px;
     margin-top: 4px;
-    opacity: 0; /* Hide label in rail by default or show on hover? Standard rail shows label. */
-    display: none; /* Simplified for icon-only rail initially */
+    opacity: 0;
+    display: none;
 }
 
 .nav-indicator {
     position: absolute;
-    top: 0; /* Center vertically */
+    top: 0;
     width: 56px;
     height: 32px;
     border-radius: 16px;
     background-color: transparent;
     transition: background-color 0.2s var(--md-sys-motion-easing-standard);
     z-index: 1;
-    top: 12px; /* (56 - 32) / 2 */
+    top: 12px;
 }
 
 .nav-item.active {
@@ -262,7 +268,7 @@ body {
     transition: box-shadow 0.2s, background-color 0.2s;
     border: none;
     position: relative;
-    overflow: hidden; /* For ripple */
+    overflow: hidden;
 }
 
 .btn-filled {
@@ -282,7 +288,7 @@ body {
 }
 
 .btn-outlined:hover {
-    background-color: var(--md-sys-color-surface-variant); /* Low opacity overlay actually */
+    background-color: var(--md-sys-color-surface-variant);
 }
 
 .btn-tonal {
@@ -350,7 +356,7 @@ body {
 
 /* Cards */
 .card {
-    background-color: var(--md-sys-color-surface-variant); /* Or surface with elevation */
+    background-color: var(--md-sys-color-surface-variant);
     border-radius: var(--md-sys-shape-corner-medium);
     padding: 24px;
     color: var(--md-sys-color-on-surface-variant);
@@ -369,19 +375,12 @@ body {
     flex-direction: column;
     gap: 24px;
     height: 100%;
-    background-color: var(--md-sys-color-surface-variant); /* Using surface variant for now, or define surface-container-low */
-    background-color: #f0f4ef; /* Light greenish tint for surface container low manually */
+    background-color: var(--md-sys-color-surface-container-low);
     padding: 32px;
     border-radius: 24px;
-    border: none; /* Clean look, no border */
+    border: none;
     transition: transform 0.2s, box-shadow 0.2s;
 }
-
-body.dark-theme .skill-category-card {
-    background-color: #1e261d; /* Dark surface container low */
-}
-
-/* Removed hover effect as requested */
 
 .skill-category-header {
     display: flex;
@@ -413,7 +412,7 @@ body.dark-theme .skill-category-card {
     height: 36px;
     padding: 0 20px;
     border-radius: 12px;
-    border: none; /* Remove border */
+    border: none;
     background-color: var(--md-sys-color-secondary-container);
     color: var(--md-sys-color-on-secondary-container);
     display: flex;
@@ -423,7 +422,7 @@ body.dark-theme .skill-category-card {
 }
 
 .chip:hover {
-    background-color: var(--md-sys-color-primary-container); /* Tonal shift on hover */
+    background-color: var(--md-sys-color-primary-container);
     color: var(--md-sys-color-on-primary-container);
     transform: scale(1.05);
 }
@@ -459,10 +458,6 @@ body.dark-theme .skill-category-card {
     color: var(--md-sys-color-on-tertiary-container);
 }
 
-.project-icon {
-    font-size: 64px;
-    opacity: 0.8;
-}
 
 .card-content {
     padding: 24px;
@@ -476,7 +471,7 @@ body.dark-theme .skill-category-card {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-top: auto; /* Push to bottom of content area before actions if needed, or just spacing */
+    margin-top: auto;
     margin-bottom: 8px;
 }
 
@@ -485,14 +480,10 @@ body.dark-theme .skill-category-card {
     font-size: 12px;
     padding: 4px 12px;
     border-radius: 8px;
-    background-color: rgba(var(--md-sys-color-on-surface-variant), 0.08); /* Subtle background */
-    background-color: #e0e5df; /* Manual mix for light theme surface variant on surface variant */
+    background-color: var(--md-sys-color-surface-container-high);
     color: var(--md-sys-color-on-surface-variant);
 }
 
-body.dark-theme .tag {
-    background-color: #2f362d;
-}
 
 .card-actions {
     display: flex;
@@ -627,14 +618,10 @@ body.dark-theme .tag {
 .text-field input:focus,
 .text-field textarea:focus {
     border-bottom: 2px solid var(--md-sys-color-primary);
-    background-color: rgba(var(--md-sys-color-primary), 0.08); /* Slight tint if we had RGB vars, using surface-variant-ish for now */
-    background-color: #e8f3e6; /* Light green tint manually for now */
+    border-bottom: 2px solid var(--md-sys-color-primary);
+    background-color: var(--md-sys-color-surface-container-highest);
 }
 
-body.dark-theme .text-field input:focus,
-body.dark-theme .text-field textarea:focus {
-    background-color: #253423;
-}
 
 .text-field label {
     position: absolute;
@@ -646,7 +633,7 @@ body.dark-theme .text-field textarea:focus {
     transition: all 0.2s ease-out;
 }
 
-/* Floating Label Logic */
+
 .text-field input:focus ~ label,
 .text-field input:not(:placeholder-shown) ~ label,
 .text-field textarea:focus ~ label,
@@ -660,7 +647,7 @@ body.dark-theme .text-field textarea:focus {
     align-self: flex-end;
 }
 
-/* Mobile Responsive Update */
+
 @media (max-width: 768px) {
     .contact-container {
         grid-template-columns: 1fr;
@@ -672,14 +659,7 @@ body.dark-theme .text-field textarea:focus {
     }
 }
 
-/* Footer */
-.footer {
-    margin-top: 64px;
-    text-align: center;
-    color: var(--md-sys-color-on-surface);
-    padding-bottom: 24px;
-    opacity: .75;
-}
+
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
@@ -717,7 +697,7 @@ body.dark-theme .text-field textarea:focus {
     /* Layout Adjustments */
     .app-container {
         flex-direction: column;
-        padding-bottom: 64px; /* Reduced from 80px */
+        padding-bottom: 64px;
     }
 
     .content-area {
@@ -727,7 +707,7 @@ body.dark-theme .text-field textarea:focus {
     
     /* Section Spacing */
     .section {
-        padding: 40px 0; /* Reduced from 64px */
+        padding: 40px 0;
         min-height: auto; /* Remove min-height constraint */
     }
 
@@ -738,7 +718,7 @@ body.dark-theme .text-field textarea:focus {
         left: 0;
         right: 0;
         width: 100%;
-        height: 64px; /* Reduced from 70px */
+        height: 64px;
         flex-direction: row;
         padding: 0;
         border-right: none;
@@ -758,8 +738,8 @@ body.dark-theme .text-field textarea:focus {
     /* Improved theme toggle touch target */
     #theme-toggle {
         position: relative;
-        width: 48px; /* Increased from 40px */
-        height: 48px; /* Increased from 40px */
+        width: 40px;
+        height: 40px; 
         border-radius: var(--md-sys-shape-corner-full);
         background-color: var(--md-sys-color-surface);
         border: 1px solid var(--md-sys-color-outline);
@@ -783,7 +763,7 @@ body.dark-theme .text-field textarea:focus {
     }
     
     #theme-toggle .material-symbols-rounded {
-        font-size: 24px; /* Increased from 20px */
+        font-size: 20px;
         color: var(--md-sys-color-on-surface-variant);
         transition: color 0.2s var(--md-sys-motion-easing-standard);
     }
@@ -809,43 +789,99 @@ body.dark-theme .text-field textarea:focus {
         top: -4px;
     }
 
-    /* Hero Section Optimizations */
+    /* Enhanced Mobile Hero Section */
     .hero-section {
         flex-direction: column-reverse;
         text-align: center;
-        gap: 16px; /* Reduced from 24px */
+        gap: 32px;
+        padding: 24px 0 40px;
+    }
+    
+    .hero-content .display-small {
+        color: var(--md-sys-color-primary);
+        font-weight: 500;
+        margin-bottom: 8px;
+        display: block;
+    }
+    
+    .hero-content .display-large {
+        margin-bottom: 16px;
+    }
+    
+    .hero-content .headline-small {
+        color: var(--md-sys-color-on-surface-variant);
+        font-weight: 400;
+        margin-bottom: 32px;
     }
     
     .hero-actions {
         justify-content: center;
-        margin-top: 24px; /* Reduced from 32px */
+        margin-top: 24px;
         flex-wrap: wrap;
+        gap: 12px;
     }
     
-    /* Scale down profile image */
+    /* Enhanced Profile Section */
     .profile-placeholder {
-        width: 220px; /* Reduced from 280px */
-        height: 220px; /* Reduced from 280px */
+        width: 280px;
+        height: 280px;
+        background: linear-gradient(135deg, var(--md-sys-color-primary-container) 0%, var(--md-sys-color-secondary-container) 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--md-sys-color-on-primary-container);
+        margin: 0 auto;
+        transition: all 0.4s var(--md-sys-motion-easing-standard);
+    }
+    
+    .profile-placeholder:hover {
+        transform: scale(1.02);
     }
     
     .profile-placeholder .material-symbols-rounded {
-        font-size: 72px; /* Reduced from 96px */
+        font-size: 96px;
+    }
+    
+    /* Floating Elements */
+    .hero-image-container::after {
+        content: '';
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        width: 24px;
+        height: 24px;
+        background: var(--md-sys-color-tertiary-container);
+        border-radius: 50%;
+        opacity: 0.8;
+    }
+    
+    .hero-image-container::before {
+        content: '';
+        position: absolute;
+        bottom: 20px;
+        left: -15px;
+        width: 16px;
+        height: 16px;
+        background: var(--md-sys-color-secondary-container);
+        border-radius: 50%;
+        opacity: 0.6;
     }
     
     /* Grid Optimizations */
     .skills-grid {
         grid-template-columns: 1fr;
-        gap: 16px; /* Reduced from 24px */
+        gap: 16px;
     }
     
     .projects-grid {
         grid-template-columns: 1fr;
-        gap: 16px; /* Reduced from 24px */
+        gap: 16px;
     }
     
     /* Reduce skill card padding */
     .skill-category-card {
-        padding: 24px; /* Reduced from 32px */
+        padding: 24px;
     }
     
     /* Button Touch Targets */
@@ -855,14 +891,48 @@ body.dark-theme .text-field textarea:focus {
     }
 }
 
+
+
 /* Extra small screens - stack hero buttons */
 @media (max-width: 360px) {
+    .hero-section {
+        gap: 24px;
+        padding: 16px 0 32px;
+    }
+    
     .hero-actions {
         flex-direction: column;
         width: 100%;
+        gap: 12px;
     }
     
     .hero-actions .btn {
         width: 100%;
+        min-height: 48px;
+        font-size: 16px;
+    }
+    
+    .hero-content .display-large {
+        font-size: 36px;
+        line-height: 44px;
+    }
+    
+    .hero-content .display-small {
+        font-size: 24px;
+        line-height: 32px;
+    }
+    
+    .hero-content .headline-small {
+        font-size: 18px;
+        line-height: 26px;
+    }
+    
+    .profile-placeholder {
+        width: 240px;
+        height: 240px;
+    }
+    
+    .profile-placeholder .material-symbols-rounded {
+        font-size: 80px;
     }
 }
