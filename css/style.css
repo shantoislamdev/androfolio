@@ -709,9 +709,13 @@ body {
     /* Section Spacing */
     .section {
         padding: 40px 0;
+        margin-bottom: 10px;
         min-height: auto; /* Remove min-height constraint */
     }
 
+    .section.hero-section{
+        min-height: 90vh;
+    }
     /* Navigation Refinements */
     .navigation-rail {
         top: auto;
