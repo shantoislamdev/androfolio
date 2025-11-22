@@ -880,6 +880,7 @@ body {
     }
     
     .hero-actions {
+        display: flex;
         flex-direction: row;
         width: 100%;
         gap: 8px;
