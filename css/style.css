@@ -876,7 +876,6 @@ body {
     }
     
     .hero-actions {
-        flex-direction: column;
         width: 100%;
         gap: 12px;
     }
