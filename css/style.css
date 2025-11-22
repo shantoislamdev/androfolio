@@ -107,20 +107,17 @@ body.dark-theme {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-}
-
-* {
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
 }
 
 *::-webkit-scrollbar {
     display: none;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
 }
 
 body {
@@ -131,6 +128,9 @@ body {
     overflow-x: hidden;
 }
 
+.material-symbols-rounded {
+    overflow: hidden;
+}
 /* Layout */
 .app-container {
     display: flex;
