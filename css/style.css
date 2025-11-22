@@ -331,6 +331,7 @@ body {
     margin-top: 32px;
     display: flex;
     gap: 16px;
+    flex-wrap: nowrap;
 }
 
 .hero-image-container {
@@ -817,8 +818,13 @@ body {
     .hero-actions {
         justify-content: center;
         margin-top: 24px;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         gap: 12px;
+    }
+    
+    .hero-actions .btn {
+        min-width: 140px;
+        flex-shrink: 0;
     }
     
     /* Enhanced Profile Section */
@@ -866,8 +872,6 @@ body {
     }
 }
 
-
-
 /* Extra small screens - stack hero buttons */
 @media (max-width: 360px) {
     .hero-section {
@@ -876,14 +880,19 @@ body {
     }
     
     .hero-actions {
+        flex-direction: row;
         width: 100%;
-        gap: 12px;
+        gap: 8px;
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .hero-actions .btn {
-        width: 100%;
+        width: 50%;
         min-height: 48px;
-        font-size: 16px;
+        font-size: 14px;
+        padding: 0 16px;
     }
     
     .hero-content .display-large {
