@@ -22,7 +22,7 @@
     --md-sys-color-on-surface-variant: #424940;
     
     --md-sys-color-outline: #72796f;
-    --md-sys-color-background: #fcfdf6;
+    --md-sys-color-background: #edf3e7;
     --md-sys-color-on-background: #1a1c19;
 
     /* Typography */
@@ -84,7 +84,7 @@ body.dark-theme {
     --md-sys-color-on-surface-variant: #c2c9bd;
     
     --md-sys-color-outline: #8c9388;
-    --md-sys-color-background: #1a1c19;
+    --md-sys-color-background: #252b23;
     --md-sys-color-on-background: #e2e3dd;
     
     /* Elevation & Shadows */
@@ -119,8 +119,8 @@ html {
 
 body {
     font-family: 'DM Sans', system-ui, sans-serif;
-    background-color: var(--md-sys-color-background);
-    color: var(--md-sys-color-on-background);
+    background-color: var(--md-sys-color-surface);
+    color: var(--md-sys-color-on-surface);
     transition: background-color 0.3s var(--md-sys-motion-easing-standard), color 0.3s var(--md-sys-motion-easing-standard);
     overflow-x: hidden;
 }
@@ -431,30 +431,73 @@ body.dark-theme .skill-category-card {
 /* Projects */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 24px;
 }
 
 .project-card {
     padding: 0;
     overflow: hidden;
-    background-color: var(--md-sys-color-surface);
-    border: 1px solid var(--md-sys-color-outline);
+    background-color: var(--md-sys-color-background);
+    border: none;
+    border-radius: 24px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
 }
 
 .card-media {
-    height: 180px;
+    height: 200px;
     background-color: var(--md-sys-color-tertiary-container);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--md-sys-color-on-tertiary-container);
+}
+
+.project-icon {
+    font-size: 64px;
+    opacity: 0.8;
 }
 
 .card-content {
     padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 16px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto; /* Push to bottom of content area before actions if needed, or just spacing */
+    margin-bottom: 8px;
+}
+
+.tag {
+    font: var(--md-sys-typescale-label-large);
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 8px;
+    background-color: rgba(var(--md-sys-color-on-surface-variant), 0.08); /* Subtle background */
+    background-color: #e0e5df; /* Manual mix for light theme surface variant on surface variant */
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+body.dark-theme .tag {
+    background-color: #2f362d;
 }
 
 .card-actions {
-    margin-top: 24px;
     display: flex;
-    gap: 8px;
+    gap: 12px;
+    margin-top: 8px;
 }
 
 /* Contact */
