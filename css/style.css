@@ -798,8 +798,8 @@ body {
     .hero-section {
         flex-direction: column-reverse;
         text-align: center;
-        gap: 32px;
-        padding: 24px 0 40px;
+        gap: 24px;
+        padding: 28px 0 32px;
     }
     
     .hero-content .display-small {
