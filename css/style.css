@@ -714,7 +714,7 @@ body {
     }
 
     .section.hero-section{
-        min-height: 90vh;
+        min-height: 100vh !important;
     }
     /* Navigation Refinements */
     .navigation-rail {
