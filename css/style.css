@@ -686,23 +686,59 @@ body.dark-theme .text-field textarea:focus {
      a {
         cursor: default;
      }
+    
+    /* Typography Scaling */
+    .display-large {
+        font-size: 40px;
+        line-height: 48px;
+    }
+    
+    .display-small {
+        font-size: 28px;
+        line-height: 36px;
+    }
+    
+    .headline-medium {
+        font-size: 24px;
+        line-height: 32px;
+    }
+    
+    .headline-small {
+        font-size: 20px;
+        line-height: 28px;
+    }
+    
+    /* Improve body text readability */
+    .body-large,
+    .body-medium {
+        line-height: 1.6;
+    }
+    
+    /* Layout Adjustments */
     .app-container {
         flex-direction: column;
-        padding-bottom: 80px; /* Space for bottom nav */
+        padding-bottom: 64px; /* Reduced from 80px */
     }
 
     .content-area {
         margin-left: 0;
         padding: 16px;
     }
+    
+    /* Section Spacing */
+    .section {
+        padding: 40px 0; /* Reduced from 64px */
+        min-height: auto; /* Remove min-height constraint */
+    }
 
+    /* Navigation Refinements */
     .navigation-rail {
         top: auto;
         bottom: 0;
         left: 0;
         right: 0;
         width: 100%;
-        height: 70px;
+        height: 64px; /* Reduced from 70px */
         flex-direction: row;
         padding: 0;
         border-right: none;
@@ -711,7 +747,7 @@ body.dark-theme .text-field textarea:focus {
     }
 
     .nav-header {
-        display: block; /* Show theme toggle on mobile */
+        display: block;
         position: fixed;
         top: 20px;
         right: 20px;
@@ -719,11 +755,11 @@ body.dark-theme .text-field textarea:focus {
         margin: 0;
     }
     
-    /* Minimal floating theme toggle for mobile */
+    /* Improved theme toggle touch target */
     #theme-toggle {
-        position: relative; /* Relative to nav-header positioning */
-        width: 40px;
-        height: 40px;
+        position: relative;
+        width: 48px; /* Increased from 40px */
+        height: 48px; /* Increased from 40px */
         border-radius: var(--md-sys-shape-corner-full);
         background-color: var(--md-sys-color-surface);
         border: 1px solid var(--md-sys-color-outline);
@@ -747,7 +783,7 @@ body.dark-theme .text-field textarea:focus {
     }
     
     #theme-toggle .material-symbols-rounded {
-        font-size: 20px;
+        font-size: 24px; /* Increased from 20px */
         color: var(--md-sys-color-on-surface-variant);
         transition: color 0.2s var(--md-sys-motion-easing-standard);
     }
@@ -773,13 +809,60 @@ body.dark-theme .text-field textarea:focus {
         top: -4px;
     }
 
+    /* Hero Section Optimizations */
     .hero-section {
         flex-direction: column-reverse;
         text-align: center;
-        gap: 24px;
+        gap: 16px; /* Reduced from 24px */
     }
     
     .hero-actions {
         justify-content: center;
+        margin-top: 24px; /* Reduced from 32px */
+        flex-wrap: wrap;
+    }
+    
+    /* Scale down profile image */
+    .profile-placeholder {
+        width: 220px; /* Reduced from 280px */
+        height: 220px; /* Reduced from 280px */
+    }
+    
+    .profile-placeholder .material-symbols-rounded {
+        font-size: 72px; /* Reduced from 96px */
+    }
+    
+    /* Grid Optimizations */
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 16px; /* Reduced from 24px */
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 16px; /* Reduced from 24px */
+    }
+    
+    /* Reduce skill card padding */
+    .skill-category-card {
+        padding: 24px; /* Reduced from 32px */
+    }
+    
+    /* Button Touch Targets */
+    .btn {
+        min-height: 44px;
+        padding: 0 20px;
+    }
+}
+
+/* Extra small screens - stack hero buttons */
+@media (max-width: 360px) {
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .hero-actions .btn {
+        width: 100%;
     }
 }
