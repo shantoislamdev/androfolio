@@ -1,22 +1,20 @@
-# Portfolio Project
+# Androfolio
 
-This repository contains the portfolio website for **Shanto Islam**, an Android developer. The project showcases skills, projects, and contact information using a modern, clean design built with HTML, CSS, and vanilla JavaScript.
+Androfolio is a modern, responsive portfolio template built with Material Design 3 principles. Featuring a clean, minimalistic design with sophisticated UI/UX elements.
 
+![Androfolio Screenshot](screenshot1.webp)
 
 ## Project Structure
 
 ```
 portfolio/
-├── css/              # Stylesheets
+├── css/
 │   └── style.css
-├── js/               # JavaScript files
+├── js/
 │   └── script.js
-├── assets/           # Static assets
-│   ├── images/       # Image files
-│   └── icons/        # Icon files
-├── index.html        # Main HTML file
-├── README.md         # Project documentation
-└── LICENSE           # MIT License
+├── index.html
+├── README.md
+└── LICENSE
 ```
 
 ## Getting Started
