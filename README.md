@@ -1,6 +1,6 @@
 # Androfolio
 
-Androfolio is a modern, responsive portfolio template built with Material Design 3 principles. Featuring a clean, minimalistic design with sophisticated UI/UX elements.
+Androfolio is a modern, responsive portfolio website built with Material Design 3 principles. Featuring a clean, minimalistic design with sophisticated UI/UX elements.
 
 ![Androfolio Screenshot](screenshot1.webp)
 
