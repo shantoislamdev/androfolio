@@ -798,7 +798,7 @@ body {
     .hero-section {
         flex-direction: column-reverse;
         text-align: center;
-        gap: 10px !important;
+        gap: 24px;
         padding: 28px 0 32px !important;
     }
     
@@ -880,7 +880,7 @@ body {
 /* Extra small screens - stack hero buttons */
 @media (max-width: 360px) {
     .hero-section {
-        gap: 24px;
+        gap: 16px;
         padding: 16px 0 32px;
     }
     
